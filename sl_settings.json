@@ -1,0 +1,16 @@
+{
+   "description": "Analyze is a Stratify OS application that runs an in-depth analysis and test suite for the system.",
+   "github": "https://github.com/StratifyLabs/Analyze",
+   "name": "Analyze",
+   "permissions": "public",
+   "publisher": "Stratify Labs, Inc",
+   "tags": "utility",
+   "type": "app",
+   "uid": "9cQyOTk3fZXOuMtPyf5j9X4H4b83",
+   "version": "1.0",
+   "ramSize": 0,
+   "timestamp": 1597017007,
+	 "documentId": "",
+   "hardwareId": "",
+   "team": "41zVSUkV7jVX9bviWjpR"
+}
