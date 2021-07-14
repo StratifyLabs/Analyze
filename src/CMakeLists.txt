@@ -2,6 +2,6 @@
 set(SOURCES
 	sl_config.h
 	main.cpp
-	Fs.cpp
-	Fs.hpp
+	UnistdTest.cpp
+	UnistdTest.hpp
 	PARENT_SCOPE)

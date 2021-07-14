@@ -8,6 +8,9 @@ public:
   Fs() : test::Test("Fs") {}
 
   bool execute_class_api_case();
+
+private:
+  bool open_case();
 };
 
 #endif // FS_HPP

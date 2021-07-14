@@ -13,20 +13,20 @@ include(API)
 include(CryptoAPI)
 include(InetAPI)
 
-get_filename_component(SOS_NAME ${CMAKE_SOURCE_DIR} NAME)
+get_filename_component(SOS_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 project(${SOS_NAME} CXX C)
 
 # This will set the default RAM used by the application
 set(RAM_SIZE 65536)
 
 #Add sources to the project
-sos_sdk_add_subdirectory(SOURCELIST ${CMAKE_SOURCE_DIR}/src)
+sos_sdk_add_subdirectory(SOURCELIST ${CMAKE_CURRENT_SOURCE_DIR}/src)
 list(
 	APPEND
 	SOURCELIST
 	${SOURCES}
-	${CMAKE_SOURCE_DIR}/sl_settings.json
-	${CMAKE_SOURCE_DIR}/README.md)
+	${CMAKE_CURRENT_SOURCE_DIR}/sl_settings.json
+	${CMAKE_CURRENT_SOURCE_DIR}/README.md)
 
 sos_sdk_app_target(RELEASE ${SOS_NAME} "" release v7m)
 add_executable(${RELEASE_TARGET})
@@ -39,9 +39,10 @@ set_property(TARGET ${RELEASE_TARGET} PROPERTY CXX_STANDARD 17)
 target_compile_options(${RELEASE_TARGET}
 	PRIVATE
 	-Os
+	#-fno-omit-frame-pointer
 	)
 
-set(DEPENDENCIES FsAPI ThreadAPI CryptoAPI JsonAPI TestAPI ChronoAPI)
+set(DEPENDENCIES FsAPI ThreadAPI CryptoAPI JsonAPI TestAPI ChronoAPI SosAPI)
 
 sos_sdk_app_add_arch_targets("${RELEASE_OPTIONS}" "${DEPENDENCIES}" ${RAM_SIZE})
 
